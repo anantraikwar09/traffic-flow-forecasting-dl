@@ -1,0 +1,8 @@
+Model,MAE (veh/hr),RMSE (veh/hr),MAPE (%),R2 Score,Congestion Acc (%),Congestion Macro-F1
+Seasonal_Naive_24h,567.57,1024.35,25.5,0.7298,74.76,0.717
+Persistence_1h,582.92,808.39,26.73,0.8317,71.02,0.5951
+HistGradientBoosting,147.29,229.02,6.56,0.9865,91.84,0.8898
+Vanilla_LSTM,157.08,239.0,7.23,0.9853,91.33,0.8868
+Stacked_BiLSTM,164.01,254.4,7.68,0.9833,90.8,0.8773
+Ablation_No_Weather,146.88,225.01,6.75,0.987,92.44,0.9019
+Champion_Conv1D_BiLSTM_Attn,168.71,253.58,8.0,0.9834,90.63,0.8787
