@@ -1,0 +1,17 @@
+# Deep Learning Training Dependencies
+tensorflow==2.21.0
+
+# Data Processing
+numpy>=2.0,<3.0
+pandas>=2.2,<4.0
+
+# Machine Learning
+scikit-learn==1.6.1
+
+# Visualization
+matplotlib>=3.9,<4.0
+seaborn>=0.13,<1.0
+
+# Jupyter Notebook
+notebook>=7.0,<8.0
+ipykernel>=6.29,<7.0
