@@ -89,7 +89,7 @@ HistGradientBoosting achieved the lowest validation RMSE and was selected for fi
 
 The following results are from the final evaluation run:
 
-| Model | MAE (veh/hr) | RMSE (veh/hr) | MAPE (%) | R² Score | Congestion Accuracy (%) | Congestion Macro-F1 |
+| Model | MAE (veh/hr) | RMSE (veh/hr) | MAPE (%) | $R^2$ Score | Congestion Accuracy (%) | Congestion Macro-F1 |
 |---|---:|---:|---:|---:|---:|---:|
 | Seasonal_Naive_24h | 568.60 | 1026.74 | 25.33 | 0.7281 | 74.79 | 0.7173 |
 | Persistence_1h | 584.40 | 810.03 | 26.82 | 0.8307 | 70.96 | 0.5947 |
@@ -104,7 +104,7 @@ The following results are from the final evaluation run:
 - **MAE:** Mean Absolute Error, measuring average absolute prediction error.
 - **RMSE:** Root Mean Squared Error, penalizing larger prediction errors.
 - **MAPE:** Mean Absolute Percentage Error. Observations with actual traffic volume below 100 veh/hr are excluded to avoid unstable percentage errors.
-- **R²:** Coefficient of determination, measuring explained variance.
+- **$R^2$:** Coefficient of determination, measuring explained variance.
 - **Congestion Accuracy:** Percentage of predictions assigned to the correct congestion tier.
 - **Congestion Macro-F1:** Macro-averaged F1 score across the four congestion categories.
 
@@ -177,7 +177,6 @@ traffic-flow-forecasting-dl/
 ├── README.md
 ├── requirements.txt
 ├── CONTRIBUTION.md
-├── make_notebook.py
 │
 ├── data/
 │   ├── raw/
@@ -194,8 +193,6 @@ traffic-flow-forecasting-dl/
 │   ├── test_predictions.csv
 │   └── training_histories.pkl
 │
-├── notebooks/
-│
 ├── reports/
 │
 └── src/
@@ -203,85 +200,97 @@ traffic-flow-forecasting-dl/
     ├── models.py
     ├── train.py
     └── evaluate.py
- 
 ```
 
 ---
 
 ## 7. Installation & Execution
-Prerequisites
+
+### Prerequisites
+
 - Python environment compatible with the installed project dependencies.
-- pip package manager.
+- `pip` package manager.
 - The Metro Interstate Traffic Volume dataset.
 
-Step 1: Clone the Repository
+### Step 1: Clone the Repository
+
 ```bash
 git clone https://github.com/anantraikwar09/traffic-flow-forecasting-dl.git
 cd traffic-flow-forecasting-dl
 ```
 
+### Step 2: Install Dependencies
 
-Step 2: Install Dependencies
 ```bash
 pip install -r requirements.txt
 ```
 
-Step 3: Prepare the Dataset
-```bash
+### Step 3: Prepare the Dataset
+
 Place the original dataset in:
+
+```text
 data/raw/Metro_Interstate_Traffic_Volume.csv
 ```
 
-Step 4: Run Preprocessing
+### Step 4: Run Preprocessing
+
 ```bash
 python src/preprocessing.py
 ```
 
 This generates the processed sequence tensors and scaler artifacts.
-Step 5: Train the Models
+
+### Step 5: Train the Models
+
 ```bash
 python src/train.py
 ```
 
 Training includes the baseline, machine learning, deep learning, and ablation experiments. TensorFlow-compatible Python and dependency versions are required for the deep learning experiments.
-Step 6: Evaluate the Models
+
+### Step 6: Evaluate the Models
+
 ```bash
 python src/evaluate.py
 ```
 
 This generates the test-set benchmark results and evaluation outputs.
-Step 7: Launch the Dashboard
+
+### Step 7: Launch the Dashboard
+
 ```bash
 streamlit run app.py
 ```
 
 The dashboard uses the saved HistGradientBoosting model and processed data artifacts. TensorFlow is not required to run the dashboard.
 
-Note: The model is stored as a Python pickle file. Only load model files from trusted sources.
-
+**Note:** The model is stored as a Python pickle file. Only load model files from trusted sources.
 
 ---
-
 
 ## 8. Technologies Used
-- Python: Core programming language.
-- Pandas & NumPy: Data manipulation and numerical computation.
-- Scikit-learn: HistGradientBoosting, preprocessing, and evaluation metrics.
-- TensorFlow / Keras: Deep learning model development and training.
-- Matplotlib & Seaborn: Data visualization.
-- Streamlit: Interactive forecasting dashboard.
-- Google Colab: Cloud-based deep learning training environment.
+
+- **Python:** Core programming language.
+- **Pandas & NumPy:** Data manipulation and numerical computation.
+- **Scikit-learn:** HistGradientBoosting, preprocessing, and evaluation metrics.
+- **TensorFlow / Keras:** Deep learning model development and training.
+- **Matplotlib & Seaborn:** Data visualization.
+- **Streamlit:** Interactive forecasting dashboard.
+- **Google Colab:** Cloud-based deep learning training environment.
 
 ---
 
-
 ## 9. Project Outcome
+
 This project demonstrates an end-to-end traffic forecasting workflow, from data cleaning and leakage-aware preprocessing to model comparison, congestion classification, and interactive deployment.
 
 HistGradientBoosting was selected using validation RMSE and achieved the following test-set results:
-- MAE: 152.62 veh/hr
-- RMSE: 235.97 veh/hr
-- R² Score: 0.9856
-- Congestion Accuracy: 91.49%
-- Congestion Macro-F1: 0.8861
+
+- **MAE:** 152.62 veh/hr
+- **RMSE:** 235.97 veh/hr
+- **$R^2$ Score:** 0.9856
+- **Congestion Accuracy:** 91.49%
+- **Congestion Macro-F1:** 0.8861
+
 The results demonstrate that a carefully engineered tree-based model can outperform the evaluated deep learning architectures on this particular traffic forecasting dataset.
