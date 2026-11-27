@@ -76,10 +76,10 @@ The validation results were:
 | Model | Validation RMSE (veh/hr) |
 |---|---:|
 | HistGradientBoosting | 238.95 |
-| Stacked_BiLSTM | 256.29 |
-| Ablation_No_Weather | 263.05 |
-| Vanilla_LSTM | 276.35 |
-| Champion_Conv1D_BiLSTM_Attn | 282.89 |
+| Stacked_BiLSTM | 268.94 |
+| Ablation_No_Weather | 240.50 |
+| Vanilla_LSTM | 270.81 |
+| Champion_Conv1D_BiLSTM_Attn | 283.28 |
 
 **Selected Model: HistGradientBoosting**
 
