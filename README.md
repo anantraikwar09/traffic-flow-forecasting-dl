@@ -91,13 +91,13 @@ The following results are from the final evaluation run:
 
 | Model | MAE (veh/hr) | RMSE (veh/hr) | MAPE (%) | $R^2$ Score | Congestion Accuracy (%) | Congestion Macro-F1 |
 |---|---:|---:|---:|---:|---:|---:|
-| Seasonal_Naive_24h | 568.60 | 1026.74 | 25.33 | 0.7281 | 74.79 | 0.7173 |
-| Persistence_1h | 584.40 | 810.03 | 26.82 | 0.8307 | 70.96 | 0.5947 |
-| HistGradientBoosting | **152.62** | **235.97** | **6.62** | **0.9856** | **91.49** | **0.8861** |
-| Vanilla_LSTM | 182.17 | 272.40 | 9.12 | 0.9809 | 89.65 | 0.8662 |
-| Stacked_BiLSTM | 170.03 | 258.17 | 8.23 | 0.9828 | 90.36 | 0.8764 |
-| Ablation_No_Weather | 176.32 | 267.08 | 8.34 | 0.9816 | 90.23 | 0.8668 |
-| Champion_Conv1D_BiLSTM_Attn | 191.06 | 284.06 | 8.54 | 0.9792 | 88.48 | 0.8030 |
+| Seasonal_Naive_24h | 568.60 |1011.53 | 25.33 | 0.7281 | 74.79 | 0.7173 |
+| Persistence_1h | 584.40 | 833.51 | 26.82 | 0.8307 | 70.96 | 0.5947 |
+| HistGradientBoosting | **152.62** | **238.95** | **6.62** | **0.9856** | **91.49** | **0.8861** |
+| Vanilla_LSTM | 182.17 | 270.81 | 9.12 | 0.9809 | 89.65 | 0.8662 |
+| Stacked_BiLSTM | 170.03 | 268.94 | 8.23 | 0.9828 | 90.36 | 0.8764 |
+| Ablation_No_Weather | 176.32 | 240.50 | 8.34 | 0.9816 | 90.23 | 0.8668 |
+| Champion_Conv1D_BiLSTM_Attn | 191.06 | 283.28 | 8.54 | 0.9792 | 88.48 | 0.8030 |
 
 **Evaluation metrics:**
 
